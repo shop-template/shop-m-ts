@@ -1,0 +1,46 @@
+@import './common.less';
+@border-radius: 5px;
+
+.page-head {
+  padding: 15px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.page-title {
+  padding: 8px 12px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.block {
+  margin: 8px 12px;
+  color: var(--van-gray-8);
+  background-color: #fff;
+  border-radius: @border-radius;
+  &.block-no-margin {
+    margin: 8px 0;
+  }
+  .block-title {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 12px;
+    .block-title-a {
+      color: var(--van-blue);
+    }
+  }
+  .block-body {
+    padding: 8px 12px;
+    &.block-body-no-padding {
+      padding: 0;
+    }
+  }
+  .van-button + .van-button {
+    margin-left: 8px;
+  }
+  .block-text {
+    font-size: 14px;
+    line-height: 30px;
+  }
+}
