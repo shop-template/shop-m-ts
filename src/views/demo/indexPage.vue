@@ -6,13 +6,16 @@
 </template>
 
 <script setup lang="ts">
+import { RouteRecordRaw } from 'vue-router'
 import demoRouters from '../../router/demo'
 
-const cellList = demoRouters[1].children.map((item) => {
+const demoArrayList = demoRouters[1].children as RouteRecordRaw[]
+
+const cellList = demoArrayList.map((item) => {
   return {
-    title: item.meta.title,
+    title: item?.meta?.title as string,
     to: `${demoRouters[1].path}/${item.path}`,
-    'is-link': true,
+    isLink: true,
   }
 })
 </script>
