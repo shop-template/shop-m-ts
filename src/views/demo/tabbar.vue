@@ -6,7 +6,7 @@
       <van-button size="small" type="primary" @click="setTabBarItem1Event">设置商场</van-button>
     </div>
   </div>
-  <!-- <div class="block">
+  <div class="block">
     <div class="block-title van-hairline--bottom">2. addTabbar</div>
     <div class="block-body">
       <van-button size="small" type="primary" @click="addTabbarEvent">新增列表</van-button>
@@ -30,7 +30,7 @@
     <div class="block-body">
       <van-button size="small" type="primary" @click="showTabbarEvent">显示tabbar</van-button>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -65,33 +65,34 @@ function setTabBarItem1Event() {
   })
 }
 
-// function addTabbarEvent() {
-//   layoutTabbar.addTabbar({
-//     index: 1,
-//     detail: {
-//       icon: 'bar-chart-o',
-//       title: '列表',
-//       to: '/list',
-//       badge: 10,
-//     },
-//   })
-// }
+function addTabbarEvent() {
+  layoutTabbar.addTabbar({
+    index: 1,
+    detail: {
+      name: 50,
+      icon: 'bar-chart-o',
+      title: '列表',
+      to: '/list',
+      badge: 10,
+    },
+  })
+}
 
-// function removeTabbarEvent() {
-//   layoutTabbar.removeTabbar(1)
-// }
+function removeTabbarEvent() {
+  layoutTabbar.removeTabbar(1)
+}
 
-// function removeTabbarEvent2() {
-//   layoutTabbar.removeTabbar('/shopping-cart')
-// }
+function removeTabbarEvent2() {
+  layoutTabbar.removeTabbar('/shopping-cart')
+}
 
-// function hideTabbarEvent() {
-//   layoutTabbar.hideTabbar()
-// }
+function hideTabbarEvent() {
+  layoutTabbar.hideTabbar()
+}
 
-// function showTabbarEvent() {
-//   layoutTabbar.showTabbar()
-// }
+function showTabbarEvent() {
+  layoutTabbar.showTabbar()
+}
 </script>
 
 <style lang="less" scoped>

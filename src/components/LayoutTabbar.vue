@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { useLayoutTabbar } from '../store/layoutTabbar'
+import { useLayoutTabbar } from '../store'
 
 const route = useRoute()
 const layoutTabbar = useLayoutTabbar()
@@ -18,10 +18,9 @@ watch(
   route,
   () => {
     // 切换 tabbar 的 active
-    // layoutTabbar.active = layoutTabbar.pathToName(route.path)
+    layoutTabbar.active = layoutTabbar.pathToName(route.path)
     // 默认只有配置在 layoutTabbar 中的 tabbar 才会展示
-    // layoutTabbar.show = layoutTabbar.tabbarToList.includes(route.path)
-    layoutTabbar.show = true
+    layoutTabbar.show = layoutTabbar.tabbarToList.includes(route.path)
   },
   {
     deep: true,

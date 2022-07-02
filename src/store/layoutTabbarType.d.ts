@@ -1,7 +1,7 @@
 import type { BadgeProps } from 'vant'
 
 export declare namespace layoutTabbarType {
-  interface ItemObjectType {
+  interface ItemBaseObjectType {
     name?: number | string
     title?: string
     icon?: string
@@ -12,27 +12,27 @@ export declare namespace layoutTabbarType {
     badgeProps?: BadgeProps
     'badge-props'?: BadgeProps
     url?: string
-    to: string
     replace?: boolean
   }
 
-  interface ChangeItemObject {
-    name?: number | string
-    title?: string
-    icon?: string
-    iconPrefix?: string
-    'icon-prefix'?: string
-    dot?: boolean
-    badge?: number | string
-    badgeProps?: BadgeProps
-    'badge-props'?: BadgeProps
-    url?: string
+  interface ItemObjectType extends ItemBaseObjectType {
+    name: number | string
+    title: string
+    icon: string
+    to: string
+  }
+
+  interface ChangeItemObject extends ItemBaseObjectType {
     to?: string
-    replace?: boolean
   }
 
   interface SetTabBarItem {
     index: number
     detail: ChangeItemObject
+  }
+
+  interface AddTabbar {
+    index: number
+    detail: ItemObjectType
   }
 }
