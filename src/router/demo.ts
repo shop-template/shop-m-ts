@@ -1,8 +1,7 @@
-import { RouteRecordRaw } from 'vue-router'
-
 const demoList = () => import('../views/demo/indexPage.vue')
 const demoLayout = () => import('../views/demo/demoLayout.vue')
 const tabbar = () => import('../views/demo/tabbar.vue')
+const navBar = () => import('../views/demo/navBar.vue')
 
 export default [
   {
@@ -24,6 +23,15 @@ export default [
     },
     children: [
       {
+        path: 'navBar',
+        name: 'navBar',
+        component: navBar,
+        meta: {
+          requiresAuth: false,
+          title: 'navbar 使用演示',
+        },
+      },
+      {
         path: 'tabbar',
         name: 'tabbar',
         component: tabbar,
@@ -34,4 +42,4 @@ export default [
       },
     ],
   },
-] as RouteRecordRaw[]
+]
