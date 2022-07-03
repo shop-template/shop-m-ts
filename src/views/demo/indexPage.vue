@@ -1,5 +1,5 @@
 <template>
-  <div class="page-head">shop-m 个人移动端项目模板</div>
+  <div class="page-head">shop-m-ts 个人移动端项目模板</div>
   <van-cell-group>
     <van-cell v-for="item in cellList" :key="item.to" v-bind="item" />
   </van-cell-group>

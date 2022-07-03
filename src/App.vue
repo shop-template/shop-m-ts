@@ -1,8 +1,3 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-</script>
-
 <template>
   <div class="page-box">
     <layout-navbar></layout-navbar>
@@ -10,6 +5,37 @@
     <layout-tabbar></layout-tabbar>
   </div>
 </template>
+
+<script setup lang="ts">
+import { watchEffect } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import { Notify } from 'vant'
+import VConsole from 'vconsole'
+import { useOnline } from '@vueuse/core'
+import LayoutTabbar from './components/LayoutTabbar.vue'
+import LayoutNavbar from './components/LayoutNavbar.vue'
+
+// 网络监听，当断网时自动提示
+// https://vueuse.org/core/useOnline/
+const online = useOnline()
+watchEffect(() => {
+  if (!online.value) {
+    Notify({ type: 'danger', message: '您当前处于断网，请联网后使用', duration: 0 })
+  } else {
+    Notify.clear()
+  }
+})
+
+const Router = useRouter()
+const Route = useRoute()
+// 当 Route.query.vconsole 存在时，初始化 vconsole
+watchEffect(() => {
+  if (Route.query.vconsole) {
+    // eslint-disable-next-line no-new
+    new VConsole()
+  }
+})
+</script>
 
 <style lang="less">
 #app {

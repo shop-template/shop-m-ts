@@ -14,10 +14,21 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@vant/area-data": "^1.3.1",
+    "@vant/use": "^1.4.1",
     "@vueuse/core": "^8.7.5",
+    "axios": "^0.27.2",
+    "axios-retry": "^3.3.1",
+    "compressorjs": "^1.1.1",
+    "dayjs": "^1.11.3",
     "lodash.merge": "^4.6.2",
     "pinia": "^2.0.14",
+    "signature_pad": "^4.0.5",
+    "swiper": "^8.2.6",
+    "trim-canvas": "^0.1.2",
+    "universal-cookie": "^4.0.4",
     "vant": "^3.5.2",
+    "vconsole": "^3.14.6",
     "vue": "^3.2.25",
     "vue-router": "^4.0.16"
   },
