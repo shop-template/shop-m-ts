@@ -1,5 +1,5 @@
 <template>
-  <van-tabbar v-if="layoutTabbar.show" v-bind="layoutTabbar.tabbarProps">
+  <van-tabbar v-if="layoutTabbar.show" v-bind="layoutTabbar.tabbarProps" v-model="layoutTabbar.active">
     <van-tabbar-item v-for="item in layoutTabbar.tabbar" :key="item.name" v-bind="item">{{
       item.title
     }}</van-tabbar-item>

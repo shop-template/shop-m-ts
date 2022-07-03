@@ -1,4 +1,4 @@
-<template>UserPage</template>
+<template>ShoppingCartPage</template>
 
 <script setup></script>
 
