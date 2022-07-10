@@ -1,10 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import userRouter from './user'
 import demoRouters from './demo'
+import permission from './permission'
 
 const HomePage = () => import('../views/home/HomePage.vue')
 const ListPage = () => import('../views/list/ListPage.vue')
 const ShoppingCartPage = () => import('../views/ShoppingCart/ShoppingCartPage.vue')
+const LoginPage = () => import('../views/common/LoginPage.vue')
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -38,6 +40,15 @@ const router = createRouter({
       },
     },
     ...userRouter,
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginPage,
+      meta: {
+        requiresAuth: false,
+        title: '登录',
+      },
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
@@ -46,5 +57,7 @@ const router = createRouter({
     return { top: 0 }
   },
 })
+
+permission(router)
 
 export default router

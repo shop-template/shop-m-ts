@@ -10,3 +10,8 @@ declare module '*.vue' {
 declare module 'trim-canvas' {
   export default function trimCanvas(selector: HTMLCanvasElement): any
 }
+
+interface ImportMetaEnv {
+  readonly VITE_prefix: string
+  readonly VITE_token: string
+}

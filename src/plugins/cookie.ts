@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import Cookies from 'universal-cookie'
-import { getPrefix, getType } from '../utils'
+import { getAddPrefix, getType } from '../utils'
 
 export declare type Cookie = any
 export interface CookieGetOptions {
@@ -41,22 +41,22 @@ const myCookies = {
   set(name, value, options?: MyCookieSetOptions) {
     // 对 options 中 expires 参数的简化使用，当设置为 Number 类型的时候，对应的几天，其他情况请自行传入 Date
     if (options && options.expires && getType(options.expires) === 'Number') {
-      cookies.set(getPrefix(name), value, {
+      cookies.set(getAddPrefix(name), value, {
         ...options,
         expires: dayjs().add(7, 'day').toDate(),
       })
     } else {
-      cookies.set(getPrefix(name), value, options as CookieSetOptions)
+      cookies.set(getAddPrefix(name), value, options as CookieSetOptions)
     }
   },
   get(name: string, options?: CookieGetOptions) {
-    return cookies.get(getPrefix(name), options)
+    return cookies.get(getAddPrefix(name), options)
   },
   getAll(options?: CookieGetOptions) {
     return cookies.getAll(options)
   },
   remove(name, options) {
-    cookies.remove(getPrefix(name), options as CookieSetOptions)
+    cookies.remove(getAddPrefix(name), options as CookieSetOptions)
   },
   cookiesInstance: cookies,
 } as CookiesType
