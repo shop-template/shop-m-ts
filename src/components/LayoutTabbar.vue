@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { useLayoutTabbar } from '../store'
+import { useLayoutTabbar } from '@/store'
 
 const route = useRoute()
 const layoutTabbar = useLayoutTabbar()

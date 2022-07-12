@@ -90,8 +90,8 @@ import { useRouter, useRoute } from 'vue-router'
 import { Toast } from 'vant'
 import { useCountDown } from '@vant/use'
 import type { FormInstance } from 'vant'
-import { phonePattern, smsPattern } from '../../utils'
-import { useUserStore } from '../../store'
+import { phonePattern, smsPattern } from '@/utils'
+import { useUserStore } from '@/store'
 
 const router = useRouter()
 const route = useRoute()

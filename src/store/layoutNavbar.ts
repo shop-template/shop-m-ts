@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import merge from 'lodash.merge'
 import type { NavBarProps } from 'vant'
 import { useLayoutTabbar } from './layoutTabbar'
-import { getType } from '../utils'
+import { getType } from '@/utils'
 import { layoutTabbarType } from './layoutNavbarType'
 
 export const useLayoutNavbar = defineStore('layoutNavbar', {

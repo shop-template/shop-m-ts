@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import { Toast } from 'vant'
-import cookie from '../plugins/cookie'
-import { apiLogin } from '../api'
-import { UserInfoType } from '../types'
+import cookie from '@/plugins/cookie'
+import { apiLogin } from '@/api'
+import { UserInfoType } from '@/types'
 
 export const useUserStore = defineStore('userStore', {
   state: () => {

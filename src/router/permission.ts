@@ -1,6 +1,6 @@
 import { Router } from 'vue-router'
-import cookie from '../plugins/cookie'
-import { useUserStore } from '../store'
+import cookie from '@/plugins/cookie'
+import { useUserStore } from '@/store'
 
 export default function (router: Router) {
   router.beforeEach((to, from) => {

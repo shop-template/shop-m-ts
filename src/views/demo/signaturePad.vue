@@ -51,7 +51,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Toast } from 'vant'
-import SignaturePad from '../../components/SignaturePad.vue'
+import SignaturePad from '@/components/SignaturePad.vue'
 
 const signaturePad1 = ref<InstanceType<typeof SignaturePad>>()
 const canvasDataURL1 = ref('')

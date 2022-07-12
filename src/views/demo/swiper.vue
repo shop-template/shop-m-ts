@@ -33,9 +33,9 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue'
-import shopHome from '../../assets/home-swiper/shop-home.png'
-import shopGuide from '../../assets/home-swiper/shop-guide.png'
-import shopPlugins from '../../assets/home-swiper/shop-plugins.png'
+import shopHome from '@/assets/home-swiper/shop-home.png'
+import shopGuide from '@/assets/home-swiper/shop-guide.png'
+import shopPlugins from '@/assets/home-swiper/shop-plugins.png'
 
 const swiper = reactive({
   list: [

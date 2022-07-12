@@ -12,8 +12,8 @@ import { useRouter, useRoute } from 'vue-router'
 import { Notify } from 'vant'
 import VConsole from 'vconsole'
 import { useOnline } from '@vueuse/core'
-import LayoutTabbar from './components/LayoutTabbar.vue'
-import LayoutNavbar from './components/LayoutNavbar.vue'
+import LayoutTabbar from '@/components/LayoutTabbar.vue'
+import LayoutNavbar from '@/components/LayoutNavbar.vue'
 
 // 网络监听，当断网时自动提示
 // https://vueuse.org/core/useOnline/

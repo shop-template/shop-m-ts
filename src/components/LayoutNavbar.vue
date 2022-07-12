@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import { watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { useLayoutNavbar } from '../store'
+import { useLayoutNavbar } from '@/store'
 
 const router = useRouter()
 const route = useRoute()

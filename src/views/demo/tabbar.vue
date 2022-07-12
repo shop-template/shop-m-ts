@@ -35,7 +35,7 @@
 
 <script setup lang="ts">
 import { reactive, onMounted } from 'vue'
-import { useLayoutTabbar } from '../../store/layoutTabbar'
+import { useLayoutTabbar } from '@/store/layoutTabbar'
 
 const layoutTabbar = useLayoutTabbar()
 

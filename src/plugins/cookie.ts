@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import Cookies from 'universal-cookie'
-import { getAddPrefix, getType } from '../utils'
+import { getAddPrefix, getType } from '@/utils'
 
 export declare type Cookie = any
 export interface CookieGetOptions {

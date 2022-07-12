@@ -44,7 +44,7 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue'
-import { useLayoutNavbar } from '../../store'
+import { useLayoutNavbar } from '@/store'
 
 const layoutNavbar = useLayoutNavbar()
 

@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { RouteRecordRaw } from 'vue-router'
-import demoRouters from '../../router/demo'
+import demoRouters from '@/router/demo'
 
 const demoArrayList = demoRouters[1].children as RouteRecordRaw[]
 

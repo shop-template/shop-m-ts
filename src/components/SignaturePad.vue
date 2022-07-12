@@ -34,7 +34,7 @@ import { useEventListener } from '@vueuse/core'
 import { Toast } from 'vant'
 import SignaturePad from 'signature_pad'
 import trimCanvas from 'trim-canvas'
-import { download } from '../utils'
+import { download } from '@/utils'
 
 interface Props {
   toolShow?: boolean

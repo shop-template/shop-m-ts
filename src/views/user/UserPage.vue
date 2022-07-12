@@ -30,8 +30,8 @@ import { reactive, ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { ImagePreview } from 'vant'
-import { useUserStore } from '../../store'
-import cookie from '../../plugins/cookie'
+import { useUserStore } from '@/store'
+import cookie from '@/plugins/cookie'
 
 const router = useRouter()
 const route = useRoute()

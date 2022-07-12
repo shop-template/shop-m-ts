@@ -42,8 +42,8 @@ import { storeToRefs } from 'pinia'
 import { Toast } from 'vant'
 import type { UploaderInstance, UploaderFileListItem } from 'vant'
 import Compressor from 'compressorjs'
-import { useUserStore } from '../../store'
-import { getType } from '../../utils'
+import { useUserStore } from '@/store'
+import { getType } from '@/utils'
 
 const router = useRouter()
 const route = useRoute()
@@ -85,7 +85,7 @@ function userImgBeforeRead(
     index: number
   },
 ): Promise<File | File[]> {
-  Toast('文件压缩中...')
+  const toast = Toast('文件压缩中...')
   return new Promise((resolve) => {
     // compressorjs 默认开启 checkOrientation 选项、图片压缩
     if (getType(file) === 'Array') {
@@ -103,6 +103,7 @@ function userImgBeforeRead(
         })
       })
       Promise.all(filePromiseList).then((res) => {
+        toast.clear()
         resolve(res as File[])
       })
     } else {
@@ -110,7 +111,10 @@ function userImgBeforeRead(
       chooseFileLength = 0
       // eslint-disable-next-line no-new
       new Compressor(curFile, {
-        success: (res) => resolve(res as File),
+        success: (res) => {
+          toast.clear()
+          resolve(res as File)
+        },
         error(err) {
           console.log(err.message)
         },
