@@ -9,7 +9,6 @@
           :max-size="userImgMaxSize"
           :before-read="userImgBeforeRead"
           :after-read="userImgAfterRead"
-          multiple
           preview-size="68"
           @oversize="userImgOversize"
         />
